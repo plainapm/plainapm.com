@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <meta name="description" content="PlainAPM - ">
+
+    <title>PlainAPM | </title>
+
+    <meta property="og:site_name" content="PlainAPM">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PlainAPM - An uncluttered view of your Rails app's performance">
+    <meta property="og:description" content="Sign up for free, no credit card required. Get instant insights into performance whys and whens. No frills, no bells & whistles. Plain APM.">
+    <meta property="og:image" content="https://plainapm.com/plainapm_og.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://plainapm.com">
+    <meta name="twitter:site" content="@plainapm">
+    <meta name="twitter:title" content="PlainAPM - An uncluttered view of your Rails app's performance">
+    <meta name="twitter:description" content="Sign up for free, no credit card required. Get instant insights into performance whys and whens. No frills, no bells & whistles. Plain APM.">
+    <meta name="twitter:image" content="https://plainapm.com/plainapm_twitter.png">
+
+    <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/assets/images/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="mask-icon" href="/assets/images/mask-icon.svg" color="#9AACCC" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png" type="image/png">
+
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.7/dist/cdn.min.js"></script>
+
+    <link type="application/atom+xml" rel="alternate" href="https://plainapm.com/blog/feed.xml" title="PlainAPM" />
+  </head>
+  <body>
+    <div class="relative">
+  <div class="relative pt-6 pb-6 sm:pb-8">
+    <div id="nav" x-data="{ mobile_dropdown_open: false }">
+
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <nav class="relative flex items-center justify-between sm:h-10 md:justify-center lg:z-50" aria-label="Global">
+
+          <div class="flex flex-1 items-center md:absolute md:inset-y-0 md:left-0">
+            <div class="flex w-full items-center justify-between md:w-auto">
+              <!-- brand -->
+              <a href="https://plainapm.com">
+                <span class="sr-only">PlainAPM</span>
+                <img src="/assets/images/plainapm_logo.svg" class="h-8 w-auto sm:h-10" width="80" height="40" alt="PlainAPM logo"/>
+              </a>
+
+              <!-- hamburger menu -->
+              <div class="-mr-2 flex items-center md:hidden">
+                <button type="button" class="inline-flex items-center justify-center rounded-md bg-gray-50 p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false" x-on:click="mobile_dropdown_open = true">
+                  <span class="sr-only">Open main menu</span>
+
+                  <!-- Heroicon name: outline/bars-3 -->
+                  <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          
+
+          <!-- nav right -->
+          <div class="hidden md:absolute md:inset-y-0 md:right-0 md:flex md:items-center md:justify-end">
+            <span class="inline-flex rounded-md shadow">
+              <a href="https://cdn.forms-content.sg-form.com/5582cfbc-74a9-11ed-a388-825cdbd151cb" class="inline-flex items-center rounded-md border border-transparent bg-white px-4 py-2 text-base font-medium text-indigo-600 hover:bg-gray-50">Join the beta</a>
+              </span>
+            </span>
+
+            <span class="inline-flex rounded-md shadow ml-2">
+              <a href="https://app.plainapm.com/users/sign_in" class="inline-flex items-center rounded-md border border-transparent bg-white px-4 py-2 text-base font-medium text-indigo-600 hover:bg-gray-50">Log in</a>
+            </span>
+          </div>
+
+        </nav>
+      </div>
+
+      <div class="absolute inset-x-0 top-0 z-10 origin-top-right transform p-2 transition md:hidden" x-show="mobile_dropdown_open" x-transition x-cloak>
+        <div class="overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-black ring-opacity-5">
+
+          <div class="flex items-center justify-between px-5 pt-4">
+            <div>
+              <img src="/assets/images/plainapm_logo.svg" class="hidden h-8 w-auto lg:block" width="80" height="40" alt="PlainAPM logo"/>
+            </div>
+
+            <div class="-mr-2">
+              <button type="button" class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" x-on:click="mobile_dropdown_open = false" x-on:click.away="mobile_dropdown_open = false">
+                <span class="sr-only">Close menu</span>
+                <!-- Heroicon name: outline/x-mark -->
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          
+
+          <a href="https://cdn.forms-content.sg-form.com/5582cfbc-74a9-11ed-a388-825cdbd151cb" class="block w-full bg-gray-50 px-5 py-3 text-center font-medium text-indigo-600 hover:bg-gray-100">Join the beta</a>
+
+          <a href="https://app.plainapm.com/users/sign_in" class="block w-full bg-gray-50 px-5 py-3 text-center font-medium text-indigo-600 hover:bg-gray-100">Log in</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="md:flex">
+  <div class="hidden md:flex flex-col">
+    <div class="overflow-y-auto md:border-r border-gray-200 bg-white pb-4 px-2">
+      <nav class="flex-1 space-y-1 bg-white px-2 mt-12" aria-label="docs navigation">
+      
+        <div>
+          <a href="#getting-started" class="text-gray-600 group w-full flex items-center pl-7 pr-2 py-2 text-sm font-medium rounded-md">Getting started</a>
+        </div>
+      
+        <div>
+          <a href="#agent-configuration" class="text-gray-600 group w-full flex items-center pl-7 pr-2 py-2 text-sm font-medium rounded-md">Agent configuration</a>
+        </div>
+      
+        <div>
+          <a href="#filtering-sensitive-information" class="text-gray-600 group w-full flex items-center pl-7 pr-2 py-2 text-sm font-medium rounded-md">Filtering sensitive information</a>
+        </div>
+      
+        <div>
+          <a href="#manual-instrumentation" class="text-gray-600 group w-full flex items-center pl-7 pr-2 py-2 text-sm font-medium rounded-md">Manual instrumentation</a>
+        </div>
+      
+        <div>
+          <a href="#adding-context-to-traces" class="text-gray-600 group w-full flex items-center pl-7 pr-2 py-2 text-sm font-medium rounded-md">Adding context to traces</a>
+        </div>
+      
+        <div>
+          <a href="#deployment-tracking" class="text-gray-600 group w-full flex items-center pl-7 pr-2 py-2 text-sm font-medium rounded-md">Deployment tracking</a>
+        </div>
+      
+        <div>
+          <a href="#using-plainapm-in-development" class="text-gray-600 group w-full flex items-center pl-7 pr-2 py-2 text-sm font-medium rounded-md">Using PlainAPM in development</a>
+        </div>
+      
+      </nav>
+    </div>
+  </div>
+
+  <div class="flex flex-col mx-auto max-w-prose prose px-4">
+    <div class="text-lg">
+      <h1>
+        <span class="block text-center text-lg font-semibold text-indigo-600">PlainAPM</span>
+        <span class="mt-2 block text-center text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl">Documentation</span>
+      </h1>
+
+      <p class="mt-8 text-xl leading-8 text-gray-500 text-center">
+        PlainAPM agent configuration and frequently used options.
+      </p>
+    </div>
+
+    <div class="md:hidden">
+      <nav class="flex-1 space-y-1 bg-white px-2 mt-12" aria-label="docs navigation">
+      
+        <div>
+          <a href="#getting-started" class="text-gray-600 group w-full flex items-center pl-7 pr-2 py-2 text-sm font-medium rounded-md">Getting started</a>
+        </div>
+      
+        <div>
+          <a href="#agent-configuration" class="text-gray-600 group w-full flex items-center pl-7 pr-2 py-2 text-sm font-medium rounded-md">Agent configuration</a>
+        </div>
+      
+        <div>
+          <a href="#filtering-sensitive-information" class="text-gray-600 group w-full flex items-center pl-7 pr-2 py-2 text-sm font-medium rounded-md">Filtering sensitive information</a>
+        </div>
+      
+        <div>
+          <a href="#manual-instrumentation" class="text-gray-600 group w-full flex items-center pl-7 pr-2 py-2 text-sm font-medium rounded-md">Manual instrumentation</a>
+        </div>
+      
+        <div>
+          <a href="#adding-context-to-traces" class="text-gray-600 group w-full flex items-center pl-7 pr-2 py-2 text-sm font-medium rounded-md">Adding context to traces</a>
+        </div>
+      
+        <div>
+          <a href="#deployment-tracking" class="text-gray-600 group w-full flex items-center pl-7 pr-2 py-2 text-sm font-medium rounded-md">Deployment tracking</a>
+        </div>
+      
+        <div>
+          <a href="#using-plainapm-in-development" class="text-gray-600 group w-full flex items-center pl-7 pr-2 py-2 text-sm font-medium rounded-md">Using PlainAPM in development</a>
+        </div>
+      
+      </nav>
+    </div>
+
+    
+    <div class="mb-10">
+      <div class="mx-auto max-w-prose text-lg" id="getting-started">
+        <h3>
+          <span class="block text-center text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-3xl">Getting started</span>
+        </h3>
+      </div>
+
+      <div class="prose prose-lg prose-indigo mx-auto mt-6 text-gray-500">
+        <p>After signing up, you’ll be prompted to create a new app. PlainAPM will
+then generate a new secret key, which acts as a unique identifier for
+your app. PlainAPM agent expects it to be in an environment variable
+called <code class="language-plaintext highlighter-rouge">PLAIN_APM_APP_KEY</code>. On platforms like Heroku, environment
+variables can be configured in your app’s settings. It is also possible
+to set the variable in a Rails initializer manually, or using a
+configuration management gem:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># config/initializers/env_vars.rb
+ENV['PLAIN_APM_APP_KEY'] ||= "my app key"
+</code></pre></div></div>
+
+<p>PlainAPM agent includes a <code class="language-plaintext highlighter-rouge">Rails::Railtie</code>, that will try to read the
+configuration once the app initialization is complete.</p>
+
+<p>In your app’s <code class="language-plaintext highlighter-rouge">Gemfile</code>, add the following line:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem "plain_apm", "~&gt; 0.9.7"
+</code></pre></div></div>
+
+<p>and run <code class="language-plaintext highlighter-rouge">bundle install</code>. Then commit and deploy these
+changes. Once deployed, your app should start sending events to
+PlainAPM. Hit one of your controller’s actions in production, and
+the latency dashboard will start showing a table with latencies.</p>
+
+      </div>
+    </div>
+    
+    <div class="mb-10">
+      <div class="mx-auto max-w-prose text-lg" id="agent-configuration">
+        <h3>
+          <span class="block text-center text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-3xl">Agent configuration</span>
+        </h3>
+      </div>
+
+      <div class="prose prose-lg prose-indigo mx-auto mt-6 text-gray-500">
+        <p>PlainAPM agent is configured through environment variables. They
+can be either passed from the command-line, or set before the
+Rails app initializes.</p>
+
+<p>This is a list of currently supported variables:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">PLAIN_APM_APP_KEY</code> - A secret key identifying the particular application to PlainAPM.</li>
+  <li><code class="language-plaintext highlighter-rouge">PLAIN_APM_ENDPOINT</code> - Endpoint used for delivering application performance events.</li>
+  <li><code class="language-plaintext highlighter-rouge">PLAIN_APM_ENABLED</code> - To force-enable PlainAPM agent, e.g. <a href="#using-plainapm-in-development">in development</a>.</li>
+  <li><code class="language-plaintext highlighter-rouge">PLAIN_APM_DISABLED</code> - To force-disable PlainAPM agent for a certain process.</li>
+</ul>
+
+      </div>
+    </div>
+    
+    <div class="mb-10">
+      <div class="mx-auto max-w-prose text-lg" id="filtering-sensitive-information">
+        <h3>
+          <span class="block text-center text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-3xl">Filtering sensitive information</span>
+        </h3>
+      </div>
+
+      <div class="prose prose-lg prose-indigo mx-auto mt-6 text-gray-500">
+        <p>Right now, PlainAPM relies on Rails’ own parameter filters.</p>
+
+<p>By default, Rails uses <a href="https://guides.rubyonrails.org/action_controller_overview.html#parameters-filtering">parameter filtering</a> to remove sensitive information from request parameters and when inspecting ActiveRecord objects. These are the default settings (as of November 2022):</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Rails.application.config.filter_parameters += [
+  :passw, :secret, :token, :_key, :crypt, :salt, :certificate, :otp, :ssn
+]
+</code></pre></div></div>
+
+<p>Values of parameters matching these keys will be replaced with <code class="language-plaintext highlighter-rouge">[FILTERED]</code> string.
+More parameters can be added in <code class="language-plaintext highlighter-rouge">initializers/filter_parameter_logging.rb</code> initializer.</p>
+
+<p>If you suspect that some sensitive information was sent to PlainAPM unintentionally, please feel free to contact our <a href="mailto:support@plainapm.com">support</a>.</p>
+
+      </div>
+    </div>
+    
+    <div class="mb-10">
+      <div class="mx-auto max-w-prose text-lg" id="manual-instrumentation">
+        <h3>
+          <span class="block text-center text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-3xl">Manual instrumentation</span>
+        </h3>
+      </div>
+
+      <div class="prose prose-lg prose-indigo mx-auto mt-6 text-gray-500">
+        <p>PlainAPM provides a way how to manually instrument parts of code.</p>
+
+<p>Lets say we have a <code class="language-plaintext highlighter-rouge">PerformanceHelper</code> module that is responsible for
+aggregating an array of events, before they are displayed in a view.</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">PerformanceHelper</span>
+  <span class="kp">include</span> <span class="no">PlainApm</span><span class="o">::</span><span class="no">Helpers</span>
+
+  <span class="k">def</span> <span class="nf">aggregated_trace</span><span class="p">(</span><span class="n">trace</span><span class="p">)</span>
+    <span class="n">plain_apm_instrument</span><span class="p">(</span><span class="s2">"aggregated_trace"</span><span class="p">,</span> <span class="p">{</span> <span class="ss">trace_size: </span><span class="n">trace</span><span class="p">.</span><span class="nf">size</span> <span class="p">})</span> <span class="k">do</span>
+      <span class="n">run_expensive_aggregation</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>To instrument this method, we first include the <code class="language-plaintext highlighter-rouge">PlainApm::Helpers</code> module, then use <code class="language-plaintext highlighter-rouge">plain_apm_instrument</code> method to instrument a block of code. First argument - <code class="language-plaintext highlighter-rouge">aggregated_trace</code> - is the annotation name to make the measurement easily identifiable. Second argument is an (arbitrary) context, which will be displayed alongside the measurement.</p>
+
+<p>When the trace is displayed in PlainAPM, it will now include the segment:</p>
+
+<p><img src="/assets/images/docs/manual-trace-segment.webp" alt="Manual trace segment" srcset=" /assets/images/docs/manual-trace-segment.webp 2513w" class="rounded-xl" sizes="" loading="" /></p>
+
+
+      </div>
+    </div>
+    
+    <div class="mb-10">
+      <div class="mx-auto max-w-prose text-lg" id="adding-context-to-traces">
+        <h3>
+          <span class="block text-center text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-3xl">Adding context to traces</span>
+        </h3>
+      </div>
+
+      <div class="prose prose-lg prose-indigo mx-auto mt-6 text-gray-500">
+        <p>Transactions (requests and jobs), can be annotated using app-specific
+information, that can later aid in debugging and analysing the
+performance impact. This can be e.g. <code class="language-plaintext highlighter-rouge">user_id</code> or a <code class="language-plaintext highlighter-rouge">subscription_name</code>.</p>
+
+<p>PlainAPM automatically recognizes two special fields <code class="language-plaintext highlighter-rouge">user_id</code> and
+<code class="language-plaintext highlighter-rouge">account_id</code> and will make them available in search for filtering and
+segmentation.</p>
+
+<p>Let’s say we want to track the current <code class="language-plaintext highlighter-rouge">user_id</code> and <code class="language-plaintext highlighter-rouge">account_id</code>:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">ApplicationController</span> <span class="o">&lt;</span> <span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span>
+  <span class="kp">include</span> <span class="no">PlainApm</span><span class="o">::</span><span class="no">Helpers</span>
+
+  <span class="n">before_action</span> <span class="ss">:set_trace_context</span>
+
+  <span class="kp">private</span>
+
+  <span class="k">def</span> <span class="nf">set_trace_context</span>
+    <span class="n">plain_apm_context</span><span class="p">(</span>
+      <span class="p">{</span>
+        <span class="ss">account_id: </span><span class="n">current_account</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">id</span><span class="p">,</span>
+        <span class="ss">user_id: </span><span class="n">current_user</span><span class="o">&amp;</span><span class="p">.</span><span class="nf">id</span>
+      <span class="p">}.</span><span class="nf">compact</span>
+    <span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<p>so we included the <code class="language-plaintext highlighter-rouge">PlainApm::Helpers</code> module into the <code class="language-plaintext highlighter-rouge">ApplicationController</code>, and added a <code class="language-plaintext highlighter-rouge">before_action</code>, which sets the context using <code class="language-plaintext highlighter-rouge">plain_apm_context</code>. The context will get displayed in the trace details, as part of the <code class="language-plaintext highlighter-rouge">process_action</code> event:</p>
+
+<p><img src="/assets/images/docs/trace-context.webp" alt="User ID and account ID become displayed as part of custom trace context" srcset=" /assets/images/docs/trace-context.webp 2524w" class="rounded-xl" sizes="" loading="" /></p>
+
+
+      </div>
+    </div>
+    
+    <div class="mb-10">
+      <div class="mx-auto max-w-prose text-lg" id="deployment-tracking">
+        <h3>
+          <span class="block text-center text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-3xl">Deployment tracking</span>
+        </h3>
+      </div>
+
+      <div class="prose prose-lg prose-indigo mx-auto mt-6 text-gray-500">
+        <p>To be able to better monitor performance changes related to
+deployments, deployment tracking needs to be configured.</p>
+
+<p>If you use git or mercurial VCS, PlainAPM should be able to
+automatically read the latest revision from it when the app starts.</p>
+
+<p>For Heroku, an extra step is needed: we’ll need to make the deploy revision available at runtime through environment variables. This is done using the <code class="language-plaintext highlighter-rouge">runtime-dyno-metadata</code> lab add-on. Using the <a href="https://devcenter.heroku.com/articles/heroku-cli">heroku CLI</a>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>heroku labs:enable runtime-dyno-metadata -a app_name
+</code></pre></div></div>
+
+      </div>
+    </div>
+    
+    <div class="mb-10">
+      <div class="mx-auto max-w-prose text-lg" id="using-plainapm-in-development">
+        <h3>
+          <span class="block text-center text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-3xl">Using PlainAPM in development</span>
+        </h3>
+      </div>
+
+      <div class="prose prose-lg prose-indigo mx-auto mt-6 text-gray-500">
+        <p>While nothing usually beats long-term monitoring of performance in
+production, it is possible to use PlainAPM to get at least some
+ballpark estimates and to improve the baseline while the app is still in
+development. There’s a couple things to set up, and to keep in mind,
+though.</p>
+
+<p>Before starting, it’s best to create a new app in PlainAPM, and use a separate app key, so that production and development data does not mix. You can always create more apps in the <a href="https://app.plainapm.com/apps/new">apps overview</a>.</p>
+
+<p>To use this key, ensure the app can access it through the
+<code class="language-plaintext highlighter-rouge">PLAIN_APM_APP_KEY=&lt;your app key&gt;</code> environment variable.</p>
+
+<p>By default, the agent does not start unless the environment is production. In order to enable it, pass <code class="language-plaintext highlighter-rouge">PLAIN_APM_ENABLED=1</code> as an environment variable, too.</p>
+
+<p>Some things to be aware of - they mostly boil down to ‘development is not production’ and an important caveat about costs:</p>
+
+<ul>
+  <li>Caching, reloading in dev - In development, Rails is reloading code changes on every request, and ActionController does not use any caching. So the performance of the same code in development and production will be different.</li>
+  <li>Exceptions reporting - In development, the <code class="language-plaintext highlighter-rouge">config.consider_all_requests_local</code> option is set to <code class="language-plaintext highlighter-rouge">true</code>. This will cause detailed debugging information to be shown in the HTTP response. The exceptions are caught in the process, and so they’re not reported to PlainAPM.</li>
+</ul>
+
+<p>Because of this, you might want to consider creating a separate
+environment for benchmarking, with production like settings, but with a
+separate database.</p>
+
+<p>Finally, something to watch out for: Events sent to PlainAPM from any
+environment would count towards billable transactions. It might be a
+good idea to disable the PlainAPM agent again before running any local
+benchmarks.</p>
+
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+    <footer class="bg-white" aria-labelledby="footer-heading">
+  <h2 id="footer-heading" class="sr-only">Footer</h2>
+
+  <div class="mx-auto max-w-5xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+    <div class="xl:grid xl:grid-cols-3 xl:gap-10">
+      <div class="space-y-8 xl:col-span-1">
+        <!-- brand -->
+        <a href="https://plainapm.com">
+          <img src="/assets/images/plainapm_logo.svg" class="h-10" width="80" height="40" alt="PlainAPM logo"/>
+        </a>
+
+        <p class="text-base text-gray-500">Uncluttering APM, one app at a time.</p>
+
+        <div class="flex space-x-6">
+          <a href="https://github.com/plainapm" class="text-gray-400 hover:text-gray-500">
+            <span class="sr-only">GitHub</span>
+            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+            </svg>
+          </a>
+
+          <a href="https://twitter.com/plainapm" class="text-gray-400 hover:text-gray-500">
+            <span class="sr-only">Twitter</span>
+            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-12 grid grid-cols-3 gap-8 xl:col-span-2 xl:mt-0">
+        <div class="mt-12 md:mt-0">
+          <h3 class="text-base font-medium text-gray-900">News</h3>
+          <ul role="list" class="mt-4 space-y-4">
+            <li>
+              <a href="/blog" class="text-base text-gray-500 hover:text-gray-900">Blog</a>
+            </li>
+
+            <li>
+              <a href="/changelog" class="text-base text-gray-500 hover:text-gray-900">Changelog</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-12 md:mt-0">
+          <h3 class="text-base font-medium text-gray-900">Support</h3>
+          <ul role="list" class="mt-4 space-y-4">
+            <li>
+              <a href="/#pricing" class="text-base text-gray-500 hover:text-gray-900">Pricing</a>
+            </li>
+
+            <li>
+              <a href="mailto:support@plainapm.com" class="text-base text-gray-500 hover:text-gray-900">Contact Us</a>
+            </li>
+
+            <li>
+              <a href="/docs" class="text-base text-gray-500 hover:text-gray-900">Documentation</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-12 md:mt-0">
+          <h3 class="text-base font-medium text-gray-900">Legal</h3>
+          <ul role="list" class="mt-4 space-y-4">
+            <li>
+              <a href="/privacy" class="text-base text-gray-500 hover:text-gray-900">Privacy</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 border-t border-gray-200 pt-8">
+      <p class="text-base text-gray-400 xl:text-center">&copy; 2022 &mdash; 2024  PlainAPM. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>

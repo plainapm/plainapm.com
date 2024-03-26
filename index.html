@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <meta name="description" content="PlainAPM - An uncluttered view of your rails app's performance">
+
+    <title>PlainAPM | An uncluttered view of your rails app's performance</title>
+
+    <meta property="og:site_name" content="PlainAPM">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="PlainAPM - An uncluttered view of your Rails app's performance">
+    <meta property="og:description" content="Sign up for free, no credit card required. Get instant insights into performance whys and whens. No frills, no bells & whistles. Plain APM.">
+    <meta property="og:image" content="https://plainapm.com/plainapm_og.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://plainapm.com">
+    <meta name="twitter:site" content="@plainapm">
+    <meta name="twitter:title" content="PlainAPM - An uncluttered view of your Rails app's performance">
+    <meta name="twitter:description" content="Sign up for free, no credit card required. Get instant insights into performance whys and whens. No frills, no bells & whistles. Plain APM.">
+    <meta name="twitter:image" content="https://plainapm.com/plainapm_twitter.png">
+
+    <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/assets/images/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="mask-icon" href="/assets/images/mask-icon.svg" color="#9AACCC" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png" type="image/png">
+
+    <link rel="stylesheet" href="/assets/css/main.css">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.7/dist/cdn.min.js"></script>
+
+    <link type="application/atom+xml" rel="alternate" href="https://plainapm.com/blog/feed.xml" title="PlainAPM" />
+  </head>
+  <body>
+    <div class="relative">
+  <div class="relative pt-6 pb-6 sm:pb-8">
+    <div id="nav" x-data="{ mobile_dropdown_open: false }">
+
+      <div class="mx-auto max-w-7xl px-4 sm:px-6">
+        <nav class="relative flex items-center justify-between sm:h-10 md:justify-center lg:z-50" aria-label="Global">
+
+          <div class="flex flex-1 items-center md:absolute md:inset-y-0 md:left-0">
+            <div class="flex w-full items-center justify-between md:w-auto">
+              <!-- brand -->
+              <a href="https://plainapm.com">
+                <span class="sr-only">PlainAPM</span>
+                <img src="/assets/images/plainapm_logo.svg" class="h-8 w-auto sm:h-10" width="80" height="40" alt="PlainAPM logo"/>
+              </a>
+
+              <!-- hamburger menu -->
+              <div class="-mr-2 flex items-center md:hidden">
+                <button type="button" class="inline-flex items-center justify-center rounded-md bg-gray-50 p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" aria-expanded="false" x-on:click="mobile_dropdown_open = true">
+                  <span class="sr-only">Open main menu</span>
+
+                  <!-- Heroicon name: outline/bars-3 -->
+                  <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          
+          <!-- nav -->
+          <div class="hidden md:flex md:space-x-10">
+            <a href="#how-it-works" class="font-medium text-gray-500 hover:text-gray-900">How does it work?</a>
+
+            <a href="#pricing" class="font-medium text-gray-500 hover:text-gray-900">Pricing</a>
+
+            <a href="#faq" class="font-medium text-gray-500 hover:text-gray-900">FAQ</a>
+          </div>
+          
+
+          <!-- nav right -->
+          <div class="hidden md:absolute md:inset-y-0 md:right-0 md:flex md:items-center md:justify-end">
+            <span class="inline-flex rounded-md shadow">
+              <a href="https://cdn.forms-content.sg-form.com/5582cfbc-74a9-11ed-a388-825cdbd151cb" class="inline-flex items-center rounded-md border border-transparent bg-white px-4 py-2 text-base font-medium text-indigo-600 hover:bg-gray-50">Join the beta</a>
+              </span>
+            </span>
+
+            <span class="inline-flex rounded-md shadow ml-2">
+              <a href="https://app.plainapm.com/users/sign_in" class="inline-flex items-center rounded-md border border-transparent bg-white px-4 py-2 text-base font-medium text-indigo-600 hover:bg-gray-50">Log in</a>
+            </span>
+          </div>
+
+        </nav>
+      </div>
+
+      <div class="absolute inset-x-0 top-0 z-10 origin-top-right transform p-2 transition md:hidden" x-show="mobile_dropdown_open" x-transition x-cloak>
+        <div class="overflow-hidden rounded-lg bg-white shadow-md ring-1 ring-black ring-opacity-5">
+
+          <div class="flex items-center justify-between px-5 pt-4">
+            <div>
+              <img src="/assets/images/plainapm_logo.svg" class="hidden h-8 w-auto lg:block" width="80" height="40" alt="PlainAPM logo"/>
+            </div>
+
+            <div class="-mr-2">
+              <button type="button" class="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" x-on:click="mobile_dropdown_open = false" x-on:click.away="mobile_dropdown_open = false">
+                <span class="sr-only">Close menu</span>
+                <!-- Heroicon name: outline/x-mark -->
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          
+          <div class="px-2 pt-2 pb-3">
+            <a href="#how-it-works" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900">How does it work?</a>
+
+            <a href="#pricing" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900">Pricing</a>
+
+            <a href="#faq" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900">FAQ</a>
+          </div>
+          
+
+          <a href="https://cdn.forms-content.sg-form.com/5582cfbc-74a9-11ed-a388-825cdbd151cb" class="block w-full bg-gray-50 px-5 py-3 text-center font-medium text-indigo-600 hover:bg-gray-100">Join the beta</a>
+
+          <a href="https://app.plainapm.com/users/sign_in" class="block w-full bg-gray-50 px-5 py-3 text-center font-medium text-indigo-600 hover:bg-gray-100">Log in</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="bg-white pb-8 sm:pb-12 lg:pb-12">
+  <div class="overflow-hidden pt-8 sm:pt-12 lg:relative lg:py-24">
+    <div class="mx-auto max-w-md px-4 sm:max-w-3xl sm:px-6 lg:grid lg:max-w-7xl lg:grid-cols-2 lg:gap-24 lg:px-8">
+      <div>
+        <div class="mt-4 sm:max-w-xl">
+          <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+            <span>An uncluttered view of your Rails&nbsp;app's <span class="text-indigo-600">performance</span></span>
+          </h1>
+
+          <p class="md:mx-auto mt-3 max-w-md text-base text-gray-500 sm:text-lg md:mt-5 md:max-w-3xl md:text-xl">
+            Get instant insights into the whys and whens. No frills, no bells &amp; whistles. Plain APM.
+          </p>
+
+          <div class="mt-5 max-w-md sm:flex md:mt-8">
+            <div class="mt-3 rounded-md shadow sm:mt-0">
+              <a href="https://cdn.forms-content.sg-form.com/5582cfbc-74a9-11ed-a388-825cdbd151cb" class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 md:py-4 md:px-10 md:text-lg">Join the beta</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sm:mx-auto sm:max-w-3xl sm:px-6">
+      <div class="py-12 sm:relative sm:mt-12 sm:py-16 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+        <div class="hidden sm:block">
+          <div class="absolute inset-y-0 left-1/2 w-screen rounded-l-3xl bg-gray-50 lg:left-80 lg:right-0 lg:w-full"></div>
+          <svg class="absolute top-8 right-1/2 -mr-3 lg:left-0 lg:m-0" width="404" height="392" fill="none" viewBox="0 0 404 392">
+            <defs>
+              <pattern id="837c3e70-6c3a-44e6-8854-cc48c737b659" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+              </pattern>
+            </defs>
+            <rect width="404" height="392" fill="url(#837c3e70-6c3a-44e6-8854-cc48c737b659)" />
+          </svg>
+        </div>
+
+        <div class="relative -mr-40 pl-4 sm:mx-auto sm:max-w-3xl sm:px-0 lg:h-full lg:max-w-none lg:pl-12">
+          <img src="/assets/images/plainapm-screenshot-50pct.png" alt="In app screenshot showing PlainAPM request trace" srcset=" /assets/images/plainapm-screenshot-50pct.png 1280w" class="w-full rounded-md shadow-xl ring-1 ring-black ring-opacity-5 lg:h-full lg:w-auto lg:max-w-none" sizes="50vw" loading="" />
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-white py-12" id="how-it-works">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="lg:text-center">
+
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">How does it work?</h2>
+
+      <p class="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl"></p>
+
+      <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto"></p>
+    </div>
+
+    <div class="mt-10">
+      <dl class="space-y-10 grid sm:grid-cols-1 md:grid-cols-2 md:gap-x-12 md:gap-y-20 md:space-y-0">
+        <div class="relative lg:pt-10 sm:order-1 md:order-1">
+          <dt>
+            <div class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500 text-white">
+	      <!-- Heroicon name: outline/cog-6-tooth -->
+	      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+		<path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
+		<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+	      </svg>
+            </div>
+
+            <p class="ml-16 text-lg font-medium leading-6 text-gray-900">
+	      Simple setup.
+	    </p>
+          </dt>
+
+          <dd class="mt-2 ml-16 text-base text-gray-500">
+            Update your Gemfile, run <code>bundle install</code>, add an environment variable
+	    with the app key and you're good to go.
+	  </dd>
+        </div>
+
+        <div class="relative sm:order-2 md:order-2">
+          <img src="/assets/images/plainapm-setup.png" alt="A Ruby Gemfile with PlainAPM gem pinned to version 0.9.2" srcset=" /assets/images/plainapm-setup.png 1280w" class="w-full rounded-md shadow-xl ring-1 ring-black ring-opacity-5 lg:h-full lg:w-auto" sizes="50vw" loading="lazy" />
+
+        </div>
+
+        <div class="relative lg:pt-10 sm:order-3 md:order-4">
+          <dt>
+            <div class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500 text-white">
+              <!-- Heroicon name: outline/paper-airplane -->
+	      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+		<path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
+	      </svg>
+            </div>
+
+            <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Automatic instrumentation and traces</p>
+          </dt>
+	  <dd class="mt-2 ml-16 text-base text-gray-500">
+            Every Rails component &mdash; instrumented. Events from ActiveRecord, ActionController, ActiveJob and other Rails subsystems, displayed in a single transaction trace. With a treasure trove of metadata that helps you identify what's slow, and without requiring you to write a single line of code. Of course, you can add more context to the traces, and instrument your own code, too.
+	  </dd>
+        </div>
+
+        <div class="relative sm:order-4 md:order-3">
+          <img src="/assets/images/plainapm-trace-50pct.png" alt="A Rails request trace, a list of ActionController, ActiveRecord and ActionView events and their attributes" srcset=" /assets/images/plainapm-trace-50pct.png 1280w" class="w-full rounded-md shadow-xl ring-1 ring-black ring-opacity-5 lg:h-full lg:w-auto" sizes="50vw" loading="lazy" />
+
+        </div>
+
+        <div class="relative lg:pt-10 sm:order-5 md:order-5">
+          <dt>
+            <div class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500 text-white">
+              <!-- Heroicon name: outline/bolt -->
+              <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+              </svg>
+            </div>
+            <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Uncover performance issues, fast</p>
+          </dt>
+          <dd class="mt-2 ml-16 text-base text-gray-500">
+            Spot anomalies quickly and get a grasp of the underlying problem and its context. Our guiding principles to help you with that are KISS, to show only what matters, and the USE methodology (Utilisation, Saturation and Errors) &mdash; a proven way of uncovering performance issues.
+          </dd>
+        </div>
+
+        <div class="relative sm:order-6 md:order-6">
+          <img src="/assets/images/plainapm-requests.png" alt="A table showing Rails controller endpoints, request counts, and median / P99 latencies" srcset=" /assets/images/plainapm-requests.png 2560w" class="w-full rounded-md shadow-xl ring-1 ring-black ring-opacity-5 lg:h-full lg:w-auto" sizes="50vw" loading="lazy" />
+
+        </div>
+
+        <div class="relative lg:pt-10 sm:order-7 md:order-8">
+          <dt>
+            <div class="absolute flex h-12 w-12 items-center justify-center rounded-md bg-indigo-500 text-white">
+              <!-- Heroicon name: outline/magnifying-glass -->
+	      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+		<path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+	      </svg>
+            </div>
+
+            <p class="ml-16 text-lg font-medium leading-6 text-gray-900">Powerful search</p>
+          </dt>
+          <dd class="mt-2 ml-16 text-base text-gray-500">
+            Search through events across all your apps. Filter by attributes
+            like duration, time and deployment revision, and see outliers easily. Add user
+            ID and account ID as extra search dimensions to find the impact and decide on
+            the priority.
+          </dd>
+        </div>
+
+	<div class="relative sm:order-8 md:order-7">
+          <img src="/assets/images/plainapm-search-50pct.png" alt="A table with Rails app events matching search criteria" srcset=" /assets/images/plainapm-search-50pct.png 1280w" class="w-full rounded-md shadow-xl ring-1 ring-black ring-opacity-5 lg:h-full lg:w-auto" sizes="50vw" loading="lazy" />
+
+	</div>
+      </dl>
+    </div>
+  </div>
+</div>
+
+<div id="pricing">
+  <div class="pt-12 sm:pt-16 lg:pt-20">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">Pricing</h2>
+        <p class="mt-4 text-xl text-gray-600">A single plan. Really?</p>
+
+        <p class="text-gray-600 mt-4 max-w-3xl mx-auto">
+          No per-seat, per-node or per-app, no hidden fees. Based purely on <a href="/#faq" class="underline">transactions</a> (requests and async jobs) made across all your organization's apps.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-4 bg-white pb-16 sm:mt-12 sm:pb-20 lg:pb-28">
+    <div class="relative">
+      <div class="absolute inset-0 h-1/2"></div>
+
+      <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="space-y-10 grid sm:grid-cols-1 md:grid-cols-2 md:gap-x-12 md:gap-y-20 md:space-y-0">
+
+          <!-- plan info -->
+          <div class="relative bg-white px-6 py-8 lg:p-12 rounded-md">
+            <h3 class="text-2xl font-bold text-gray-900 sm:text-3xl sm:tracking-tight">Plain &amp; simple</h3>
+            <p class="mt-6 text-base text-gray-500"><!-- plan description --></p>
+
+            <div class="mt-8">
+              <!-- pricing features -->
+              <ul role="list" class="mt-8 space-y-5 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:gap-y-5 lg:space-y-0">
+
+                <li class="flex items-start lg:col-span-1">
+                  <div class="flex-shrink-0">
+                    <!-- Heroicon name: mini/check-circle -->
+                    <svg class="h-5 w-5 text-indigo-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <p class="ml-3 text-sm text-gray-700">Unlimited hosts and apps</p>
+                </li>
+
+                <li class="flex items-start lg:col-span-1">
+                  <div class="flex-shrink-0">
+                    <!-- Heroicon name: mini/check-circle -->
+                    <svg class="h-5 w-5 text-indigo-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <p class="ml-3 text-sm text-gray-700">Transaction tracing, automatic instrumentation, custom events</p>
+                </li>
+
+                <li class="flex items-start lg:col-span-1">
+                  <div class="flex-shrink-0">
+                    <!-- Heroicon name: mini/check-circle -->
+                    <svg class="h-5 w-5 text-indigo-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <p class="ml-3 text-sm text-gray-700">Deployment tracking, powerful search</p>
+                </li>
+
+                <li class="flex items-start lg:col-span-1">
+                  <div class="flex-shrink-0">
+                    <!-- Heroicon name: mini/check-circle -->
+                    <svg class="h-5 w-5 text-indigo-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <p class="ml-3 text-sm text-gray-700">7 days data retention</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- price column -->
+          <div class="relative py-4 px-6 text-center lg:flex lg:flex-shrink-0 lg:flex-col lg:justify-center lg:p-12 rounded-md">
+            <p class="text-lg font-medium leading-6 text-gray-900"></p>
+
+            <div class="mt-8 flex items-center justify-center text-5xl font-bold tracking-tight text-gray-900">
+              <span>$15/mo</span>
+              <span class="ml-3 text-xl font-medium tracking-normal text-gray-500">USD</span>
+            </div>
+
+            <p class="mt-4 text-sm font-medium text-gray-500">
+              for every block of 250k <a href="/#faq" class="underline">transactions</a> used. <br />
+            </p>
+
+            <p class="mt-4 text-xs text-gray-500">
+              30 days money back guarantee if you find out its not your kind of APM.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-white" id="faq">
+  <div class="mx-auto max-w-7xl py-16 px-4 sm:px-6 lg:py-20 lg:px-8">
+    <div class="lg:grid lg:grid-cols-3 lg:gap-8">
+      <div>
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900">Frequently asked questions</h2>
+      </div>
+      <div class="mt-12 lg:col-span-2 lg:mt-0">
+        <dl class="space-y-12">
+          <div>
+            <dt class="text-lg font-medium leading-6 text-gray-900">What counts as a transaction?</dt>
+            <dd class="mt-2 text-base text-gray-500">Either your app handling a request, or performing a background job. At the end of the month, we sum up transactions from all your apps to determine the price.</dd>
+          </div>
+
+          <div>
+            <dt class="text-lg font-medium leading-6 text-gray-900">How can I get support?</dt>
+            <dd class="mt-2 text-base text-gray-500">Feel free to contact us via <a href="mailto:support@plainapm.com" class="hover:text-gray-900 underline">email</a>.</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    <footer class="bg-white" aria-labelledby="footer-heading">
+  <h2 id="footer-heading" class="sr-only">Footer</h2>
+
+  <div class="mx-auto max-w-5xl py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+    <div class="xl:grid xl:grid-cols-3 xl:gap-10">
+      <div class="space-y-8 xl:col-span-1">
+        <!-- brand -->
+        <a href="https://plainapm.com">
+          <img src="/assets/images/plainapm_logo.svg" class="h-10" width="80" height="40" alt="PlainAPM logo"/>
+        </a>
+
+        <p class="text-base text-gray-500">Uncluttering APM, one app at a time.</p>
+
+        <div class="flex space-x-6">
+          <a href="https://github.com/plainapm" class="text-gray-400 hover:text-gray-500">
+            <span class="sr-only">GitHub</span>
+            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+            </svg>
+          </a>
+
+          <a href="https://twitter.com/plainapm" class="text-gray-400 hover:text-gray-500">
+            <span class="sr-only">Twitter</span>
+            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="mt-12 grid grid-cols-3 gap-8 xl:col-span-2 xl:mt-0">
+        <div class="mt-12 md:mt-0">
+          <h3 class="text-base font-medium text-gray-900">News</h3>
+          <ul role="list" class="mt-4 space-y-4">
+            <li>
+              <a href="/blog" class="text-base text-gray-500 hover:text-gray-900">Blog</a>
+            </li>
+
+            <li>
+              <a href="/changelog" class="text-base text-gray-500 hover:text-gray-900">Changelog</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-12 md:mt-0">
+          <h3 class="text-base font-medium text-gray-900">Support</h3>
+          <ul role="list" class="mt-4 space-y-4">
+            <li>
+              <a href="/#pricing" class="text-base text-gray-500 hover:text-gray-900">Pricing</a>
+            </li>
+
+            <li>
+              <a href="mailto:support@plainapm.com" class="text-base text-gray-500 hover:text-gray-900">Contact Us</a>
+            </li>
+
+            <li>
+              <a href="/docs" class="text-base text-gray-500 hover:text-gray-900">Documentation</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-12 md:mt-0">
+          <h3 class="text-base font-medium text-gray-900">Legal</h3>
+          <ul role="list" class="mt-4 space-y-4">
+            <li>
+              <a href="/privacy" class="text-base text-gray-500 hover:text-gray-900">Privacy</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 border-t border-gray-200 pt-8">
+      <p class="text-base text-gray-400 xl:text-center">&copy; 2022 &mdash; 2024  PlainAPM. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>
