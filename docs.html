@@ -195,6 +195,18 @@
       </nav>
     </div>
 
+    <div class="mt-8 flex flex-col">
+      <div class="pointer-events-auto w-full overflow-hidden rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
+        <div class="p-4">
+          <div class="flex items-start">
+            <div class="ml-3 w-0 flex-1 pt-0.5">
+              <p class="text-sm">Can't find what you're looking for? Just ping <a href="mailto:balazs@plainapm.com" class="font-medium text-indigo-600">balazs@plainapm.com</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     
     <div class="mb-10">
       <div class="mx-auto max-w-prose text-lg" id="getting-started">
@@ -202,7 +214,6 @@
           <span class="block text-center text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-3xl">Getting started</span>
         </h3>
       </div>
-
       <div class="prose prose-lg prose-indigo mx-auto mt-6 text-gray-500">
         <p>After signing up, you’ll be prompted to create a new app. PlainAPM will
 then generate a new secret key, which acts as a unique identifier for
@@ -238,7 +249,6 @@ the latency dashboard will start showing a table with latencies.</p>
           <span class="block text-center text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-3xl">Agent configuration</span>
         </h3>
       </div>
-
       <div class="prose prose-lg prose-indigo mx-auto mt-6 text-gray-500">
         <p>PlainAPM agent is configured through environment variables. They
 can be either passed from the command-line, or set before the
@@ -262,7 +272,6 @@ Rails app initializes.</p>
           <span class="block text-center text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-3xl">Filtering sensitive information</span>
         </h3>
       </div>
-
       <div class="prose prose-lg prose-indigo mx-auto mt-6 text-gray-500">
         <p>Right now, PlainAPM relies on Rails’ own parameter filters.</p>
 
@@ -276,7 +285,7 @@ Rails app initializes.</p>
 <p>Values of parameters matching these keys will be replaced with <code class="language-plaintext highlighter-rouge">[FILTERED]</code> string.
 More parameters can be added in <code class="language-plaintext highlighter-rouge">initializers/filter_parameter_logging.rb</code> initializer.</p>
 
-<p>If you suspect that some sensitive information was sent to PlainAPM unintentionally, please feel free to contact our <a href="mailto:support@plainapm.com">support</a>.</p>
+<p>If you suspect that some sensitive information was sent to PlainAPM unintentionally, please feel free to contact our <a href="mailto:balazs@plainapm.com">support</a>.</p>
 
       </div>
     </div>
@@ -287,7 +296,6 @@ More parameters can be added in <code class="language-plaintext highlighter-roug
           <span class="block text-center text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-3xl">Manual instrumentation</span>
         </h3>
       </div>
-
       <div class="prose prose-lg prose-indigo mx-auto mt-6 text-gray-500">
         <p>PlainAPM provides a way how to manually instrument parts of code.</p>
 
@@ -321,7 +329,6 @@ aggregating an array of events, before they are displayed in a view.</p>
           <span class="block text-center text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-3xl">Adding context to traces</span>
         </h3>
       </div>
-
       <div class="prose prose-lg prose-indigo mx-auto mt-6 text-gray-500">
         <p>Transactions (requests and jobs), can be annotated using app-specific
 information, that can later aid in debugging and analysing the
@@ -365,7 +372,6 @@ segmentation.</p>
           <span class="block text-center text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-3xl">Deployment tracking</span>
         </h3>
       </div>
-
       <div class="prose prose-lg prose-indigo mx-auto mt-6 text-gray-500">
         <p>To be able to better monitor performance changes related to
 deployments, deployment tracking needs to be configured.</p>
@@ -387,7 +393,6 @@ automatically read the latest revision from it when the app starts.</p>
           <span class="block text-center text-2xl font-bold leading-8 tracking-tight text-gray-900 sm:text-3xl">Using PlainAPM in development</span>
         </h3>
       </div>
-
       <div class="prose prose-lg prose-indigo mx-auto mt-6 text-gray-500">
         <p>While nothing usually beats long-term monitoring of performance in
 production, it is possible to use PlainAPM to get at least some
@@ -480,7 +485,7 @@ benchmarks.</p>
             </li>
 
             <li>
-              <a href="mailto:support@plainapm.com" class="text-base text-gray-500 hover:text-gray-900">Contact Us</a>
+              <a href="mailto:balazs@plainapm.com" class="text-base text-gray-500 hover:text-gray-900">Contact Me</a>
             </li>
 
             <li>
