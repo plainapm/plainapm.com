@@ -127,6 +127,93 @@
 
 <div class="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 mt-12">
   
+  <section id="2024-03-31 00:00:00 +0100" aria-labelledby="2024-03-31 00:00:00 +0100-heading" class="md:flex">
+    <h2 id="2024-03-31 00:00:00 +0100-heading" class="pl-7 text-sm leading-6 text-slate-500 md:w-1/4 md:pl-0 md:pr-12 md:text-right">
+      <a href="#2024-03-31">March 31, 2024</a>
+    </h2>
+
+    <div class="relative pt-2 px-7 md:w-3/4 md:pt-0 md:pl-12 pb-16">
+      <div class="absolute bottom-0 left-0 w-px bg-slate-200 -top-3 md:top-2.5">
+      </div>
+
+      <div class="absolute -top-[1.0625rem] -left-1 h-[0.5625rem] w-[0.5625rem] rounded-full border-2 border-slate-300 bg-white md:top-[0.4375rem]">
+      </div>
+
+      <div class="max-w-none prose-h3:mb-4 prose-h3:text-base prose-h3:leading-6 prose-sm prose prose-slate prose-a:font-semibold prose-a:text-indigo-500 hover:prose-a:text-indigo-600">
+        <h3>Saved searches</h3>
+
+	<p>Search queries can now be stored for later:</p>
+
+<p><img src="/assets/images/changelog/saved-searches.webp" alt="A page showing a list of saved queries" srcset=" /assets/images/changelog/saved-searches.webp 2560w" class="rounded-xl" sizes="" loading="lazy" /></p>
+
+
+      </div>
+    </div>
+  </section>
+  
+  <section id="2024-03-24 00:00:00 +0100" aria-labelledby="2024-03-24 00:00:00 +0100-heading" class="md:flex">
+    <h2 id="2024-03-24 00:00:00 +0100-heading" class="pl-7 text-sm leading-6 text-slate-500 md:w-1/4 md:pl-0 md:pr-12 md:text-right">
+      <a href="#2024-03-24">March 24, 2024</a>
+    </h2>
+
+    <div class="relative pt-2 px-7 md:w-3/4 md:pt-0 md:pl-12 pb-16">
+      <div class="absolute bottom-0 left-0 w-px bg-slate-200 -top-3 md:top-2.5">
+      </div>
+
+      <div class="absolute -top-[1.0625rem] -left-1 h-[0.5625rem] w-[0.5625rem] rounded-full border-2 border-slate-300 bg-white md:top-[0.4375rem]">
+      </div>
+
+      <div class="max-w-none prose-h3:mb-4 prose-h3:text-base prose-h3:leading-6 prose-sm prose prose-slate prose-a:font-semibold prose-a:text-indigo-500 hover:prose-a:text-indigo-600">
+        <h3>Improved tracking for action mailer</h3>
+
+	<p>While prior releases since 0.9.4 were bug fixes, version 0.9.7 of the
+Ruby agent brings improved tracking of action mailer - the agent now
+collects the subject, sender, and a hashed list of recipients, and the
+app has been updated to allow searching these fields and displaying them
+in traces.</p>
+
+<p>This should help debugging deliverability/mailer problems:</p>
+
+<p><img src="/assets/images/changelog/mailer-tracing.webp" alt="Transaction trace of actionmailer with a sender, subject and a SHA1 sum of recipient's email" srcset=" /assets/images/changelog/mailer-tracing.webp 2560w" class="rounded-xl" sizes="" loading="lazy" /></p>
+
+
+      </div>
+    </div>
+  </section>
+  
+  <section id="2024-03-06 00:00:00 +0100" aria-labelledby="2024-03-06 00:00:00 +0100-heading" class="md:flex">
+    <h2 id="2024-03-06 00:00:00 +0100-heading" class="pl-7 text-sm leading-6 text-slate-500 md:w-1/4 md:pl-0 md:pr-12 md:text-right">
+      <a href="#2024-03-06">March 06, 2024</a>
+    </h2>
+
+    <div class="relative pt-2 px-7 md:w-3/4 md:pt-0 md:pl-12 pb-16">
+      <div class="absolute bottom-0 left-0 w-px bg-slate-200 -top-3 md:top-2.5">
+      </div>
+
+      <div class="absolute -top-[1.0625rem] -left-1 h-[0.5625rem] w-[0.5625rem] rounded-full border-2 border-slate-300 bg-white md:top-[0.4375rem]">
+      </div>
+
+      <div class="max-w-none prose-h3:mb-4 prose-h3:text-base prose-h3:leading-6 prose-sm prose prose-slate prose-a:font-semibold prose-a:text-indigo-500 hover:prose-a:text-indigo-600">
+        <h3>Performance improvements</h3>
+
+	<p>Version 0.9.3 of the Ruby gem/agent was a result of benchmarking and
+profiling the existing code. Besides performance improvements, there are
+three updates:</p>
+
+<ul>
+  <li>Inspired by a <a href="https://bugs.ruby-lang.org/issues/19197">Ruby issue
+#19197</a>, the agent now, on an
+exception, tries to walk back the <a href="https://docs.ruby-lang.org/en/master/Exception.html#method-i-cause">cause</a> chain to the original exception,
+and stores the result in a ‘root_cause’ (along with a backtrace).</li>
+  <li>Disabling the agent should now avoid loading/initializing any PlainAPM
+instrumentation code, i.e. cause no overhead.</li>
+  <li>Loading/initialization in Rails is improved.</li>
+</ul>
+
+      </div>
+    </div>
+  </section>
+  
   <section id="2023-02-15 00:00:00 +0100" aria-labelledby="2023-02-15 00:00:00 +0100-heading" class="md:flex">
     <h2 id="2023-02-15 00:00:00 +0100-heading" class="pl-7 text-sm leading-6 text-slate-500 md:w-1/4 md:pl-0 md:pr-12 md:text-right">
       <a href="#2023-02-15">February 15, 2023</a>
