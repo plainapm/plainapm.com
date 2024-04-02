@@ -68,9 +68,9 @@
           
           <!-- nav -->
           <div class="hidden md:flex md:space-x-10">
-            <a href="#how-it-works" class="font-medium text-gray-500 hover:text-gray-900">How does it work?</a>
-
             <a href="#use-cases" class="font-medium text-gray-500 hover:text-gray-900">What can it do for you?</a>
+
+            <a href="#how-it-works" class="font-medium text-gray-500 hover:text-gray-900">How does it work?</a>
 
             <a href="#pricing" class="font-medium text-gray-500 hover:text-gray-900">Pricing</a>
 
@@ -114,9 +114,9 @@
 
           
           <div class="px-2 pt-2 pb-3">
-            <a href="#how-it-works" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900">How does it work?</a>
-
             <a href="#use-cases" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900">What can it do for you?</a>
+
+            <a href="#how-it-works" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900">How does it work?</a>
 
             <a href="#pricing" class="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900">Pricing</a>
 
@@ -174,6 +174,94 @@
 
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-white py-12 sm:py-24" id="use-cases">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="lg:text-center">
+
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">What can it do for you?</h2>
+
+      <p class="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl"></p>
+
+      <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto"></p>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-10">
+    <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+      <div>
+        <h2 class="text-base font-semibold leading-7 text-indigo-600">The tool</h2>
+        <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">For debugging in&nbsp;production</p>
+        <p class="mt-6 text-base leading-7 text-gray-600">Analysing traces and searching through events with rich metadata allows you to easily debug production issues - from finding the infamous N+1 queries, to checking email sends.</p>
+      </div>
+      <dl class="col-span-2 grid grid-cols-1 gap-x-8 gap-y-10 text-base leading-7 text-gray-600 sm:grid-cols-2 lg:gap-y-16">
+        <div class="relative pl-9">
+          <dt class="font-semibold text-gray-900">
+            <svg class="absolute left-0 top-1 h-5 w-5 text-indigo-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+            </svg>
+            Find slow queries
+          </dt>
+          <dd class="mt-2">Search through SQL events to spot complex/expensive queries, then check the corresponding request/job traces to get more context about their purpose and whether they can be optimized. Events also contain a source location, pointing to the file and line where the SQL query ran.</dd>
+        </div>
+        <div class="relative pl-9">
+          <dt class="font-semibold text-gray-900">
+            <svg class="absolute left-0 top-1 h-5 w-5 text-indigo-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+            </svg>
+            Analyze request and job executions
+          </dt>
+          <dd class="mt-2">All the events associated with a request or a job are displayed in a comprehensive waterfall trace. The events are color-coded by subsystems (e.g. ActionView/ActiveRecord), so you can visually grep for things that are out of place - e.g. a complex view with too many partials, or a lurking N+1.</dd>
+        </div>
+        <div class="relative pl-9">
+          <dt class="font-semibold text-gray-900">
+            <svg class="absolute left-0 top-1 h-5 w-5 text-indigo-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+            </svg>
+            Detect allocation hotspots
+          </dt>
+          <dd class="mt-2">Find requests, jobs, or views that allocate a large number of objects. For ActiveRecord queries, model instantiations are tracked, so you can consider optimizing them with <code>.pluck</code>.</dd>
+        </div>
+        <div class="relative pl-9">
+          <dt class="font-semibold text-gray-900">
+            <svg class="absolute left-0 top-1 h-5 w-5 text-indigo-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+            </svg>
+            Uncover user behavior in your app
+          </dt>
+          <dd class="mt-2">User ID and Account ID can be used as a search dimension when added to the event context. This allows you to understand e.g. what requests were made before a user encountered a bug.</dd>
+        </div>
+        <div class="relative pl-9">
+          <dt class="font-semibold text-gray-900">
+            <svg class="absolute left-0 top-1 h-5 w-5 text-indigo-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+            </svg>
+	    Track email sends
+          </dt>
+          <dd class="mt-2">Ever needed to check which emails were going to user X? Simply search by a user ID or a hashed recipient email address.</dd>
+        </div>
+        <div class="relative pl-9">
+          <dt class="font-semibold text-gray-900">
+            <svg class="absolute left-0 top-1 h-5 w-5 text-indigo-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+            </svg>
+            Trace jobs spawned from requests
+          </dt>
+          <dd class="mt-2">ActiveJob events are automatically annotated with the trace ID of the request that spawned them. This makes it possible to see which users/requests triggered the job, e.g. an asynchronous email delivery.</dd>
+        </div>
+        <div class="relative pl-9">
+          <dt class="font-semibold text-gray-900">
+            <svg class="absolute left-0 top-1 h-5 w-5 text-indigo-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+            </svg>
+            Get temporal context for exceptions
+          </dt>
+          <dd class="mt-2">Exception events are linked to the request or a job where they occured. Viewing the complete trace helps with understanding what happened immediately before an exception got raised.</dd>
+        </div>
+      </dl>
     </div>
   </div>
 </div>
@@ -281,94 +369,6 @@
           <img src="/assets/images/plainapm-search-50pct.png" alt="A table with Rails app events matching search criteria" srcset=" /assets/images/plainapm-search-50pct.png 1280w" class="w-full rounded-md shadow-xl ring-1 ring-black ring-opacity-5 lg:h-full lg:w-auto" sizes="50vw" loading="lazy" />
 
 	</div>
-      </dl>
-    </div>
-  </div>
-</div>
-
-<div class="bg-white py-12 sm:py-24" id="use-cases">
-  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="lg:text-center">
-
-      <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl">What can it do for you?</h2>
-
-      <p class="mt-2 text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl"></p>
-
-      <p class="mt-4 max-w-2xl text-xl text-gray-500 lg:mx-auto"></p>
-    </div>
-  </div>
-
-  <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-10">
-    <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-      <div>
-        <h2 class="text-base font-semibold leading-7 text-indigo-600">The tool</h2>
-        <p class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">For debugging in&nbsp;production</p>
-        <p class="mt-6 text-base leading-7 text-gray-600">Analysing traces and searching through events with rich metadata allows you to easily debug production issues - from finding the infamous N+1 queries, to checking email deliveries.</p>
-      </div>
-      <dl class="col-span-2 grid grid-cols-1 gap-x-8 gap-y-10 text-base leading-7 text-gray-600 sm:grid-cols-2 lg:gap-y-16">
-        <div class="relative pl-9">
-          <dt class="font-semibold text-gray-900">
-            <svg class="absolute left-0 top-1 h-5 w-5 text-indigo-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-            </svg>
-            Find slow queries
-          </dt>
-          <dd class="mt-2">Search through SQL events to spot complex/expensive queries, then check the corresponding request/job traces to get more context about their purpose and whether they can be optimized. Events also contain a source location, pointing to the file and line where the SQL query ran.</dd>
-        </div>
-        <div class="relative pl-9">
-          <dt class="font-semibold text-gray-900">
-            <svg class="absolute left-0 top-1 h-5 w-5 text-indigo-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-            </svg>
-            Analyze request and job executions
-          </dt>
-          <dd class="mt-2">All the events associated with a request or a job are displayed in a comprehensive waterfall trace. The events are color-coded by subsystems (e.g. ActionView/ActiveRecord), so you can visually grep for things that are out of place - e.g. a complex view with too many partials, or a lurking N+1.</dd>
-        </div>
-        <div class="relative pl-9">
-          <dt class="font-semibold text-gray-900">
-            <svg class="absolute left-0 top-1 h-5 w-5 text-indigo-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-            </svg>
-            Detect allocation hotspots
-          </dt>
-          <dd class="mt-2">Find requests, jobs, or views that allocate a large number of objects. For ActiveRecord queries, model instantiations are tracked, so you can consider optimizing them with <code>.pluck</code>.</dd>
-        </div>
-        <div class="relative pl-9">
-          <dt class="font-semibold text-gray-900">
-            <svg class="absolute left-0 top-1 h-5 w-5 text-indigo-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-            </svg>
-            Understand user behavior in your app
-          </dt>
-          <dd class="mt-2">User ID and Account ID can be used as a search dimension when added to the event context. This allows you to understand e.g. what requests were made before a user encountered a bug.</dd>
-        </div>
-        <div class="relative pl-9">
-          <dt class="font-semibold text-gray-900">
-            <svg class="absolute left-0 top-1 h-5 w-5 text-indigo-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-            </svg>
-	    Track email deliveries
-          </dt>
-          <dd class="mt-2">Ever needed to check which emails were delivered to user X? Simply search by a user ID or a hashed recipient email address.</dd>
-        </div>
-        <div class="relative pl-9">
-          <dt class="font-semibold text-gray-900">
-            <svg class="absolute left-0 top-1 h-5 w-5 text-indigo-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-            </svg>
-            Trace jobs spawned from requests
-          </dt>
-          <dd class="mt-2">ActiveJob events are automatically annotated with the trace ID of the request that spawned them. This makes it possible to see which users/requests triggered the job, e.g. an asynchronous email delivery.</dd>
-        </div>
-        <div class="relative pl-9">
-          <dt class="font-semibold text-gray-900">
-            <svg class="absolute left-0 top-1 h-5 w-5 text-indigo-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-              <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-            </svg>
-            Get temporal context for exceptions
-          </dt>
-          <dd class="mt-2">Exception events are linked to the request or a job where they occured. Viewing the complete trace helps with understanding what happened immediately before an exception got raised.</dd>
-        </div>
       </dl>
     </div>
   </div>
