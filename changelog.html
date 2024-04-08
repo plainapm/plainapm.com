@@ -127,6 +127,47 @@
 
 <div class="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 mt-12">
   
+  <section id="2024-04-08 00:00:00 +0200" aria-labelledby="2024-04-08 00:00:00 +0200-heading" class="md:flex">
+    <h2 id="2024-04-08 00:00:00 +0200-heading" class="pl-7 text-sm leading-6 text-slate-500 md:w-1/4 md:pl-0 md:pr-12 md:text-right">
+      <a href="#2024-04-08">April 08, 2024</a>
+    </h2>
+
+    <div class="relative pt-2 px-7 md:w-3/4 md:pt-0 md:pl-12 pb-16">
+      <div class="absolute bottom-0 left-0 w-px bg-slate-200 -top-3 md:top-2.5">
+      </div>
+
+      <div class="absolute -top-[1.0625rem] -left-1 h-[0.5625rem] w-[0.5625rem] rounded-full border-2 border-slate-300 bg-white md:top-[0.4375rem]">
+      </div>
+
+      <div class="max-w-none prose-h3:mb-4 prose-h3:text-base prose-h3:leading-6 prose-sm prose prose-slate prose-a:font-semibold prose-a:text-indigo-500 hover:prose-a:text-indigo-600">
+        <h3>GC stats</h3>
+
+	<p>Version 0.9.8 of the agent gathers additional data: GC stats and CPU
+time spent in thread:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">gc_time</code> - time spent in the garbage collector.</li>
+  <li><code class="language-plaintext highlighter-rouge">gc_major_count</code> - number of major (full) garbage collections.</li>
+  <li><code class="language-plaintext highlighter-rouge">gc_minor_count</code> - number of minor (young objects) garbage
+collections.</li>
+</ul>
+
+<p>This allows searching for events where GC took longer than a certain
+threshold:</p>
+
+<p><img src="/assets/images/changelog/filter-by-gc-time.webp" alt="Search query results where GC took more than 5ms" srcset=" /assets/images/changelog/filter-by-gc-time.webp 2560w" class="rounded-xl" sizes="" loading="lazy" /></p>
+
+<p>Another tweak is that if the info is present, exceptions are now
+annotated by the current controller + endpoint, or job class + queue,
+which are available for searching:</p>
+
+<p><img src="/assets/images/changelog/searching-exceptions-by-endpoint.webp" alt="Search query results w/ exceptions that happened in the MoviesController" srcset=" /assets/images/changelog/searching-exceptions-by-endpoint.webp 2559w" class="rounded-xl" sizes="" loading="lazy" /></p>
+
+
+      </div>
+    </div>
+  </section>
+  
   <section id="2024-03-31 00:00:00 +0100" aria-labelledby="2024-03-31 00:00:00 +0100-heading" class="md:flex">
     <h2 id="2024-03-31 00:00:00 +0100-heading" class="pl-7 text-sm leading-6 text-slate-500 md:w-1/4 md:pl-0 md:pr-12 md:text-right">
       <a href="#2024-03-31">March 31, 2024</a>
