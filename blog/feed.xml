@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://plainapm.com/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://plainapm.com/" rel="alternate" type="text/html" /><updated>2024-05-02T12:00:59+02:00</updated><id>https://plainapm.com/blog/feed.xml</id><title type="html">PlainAPM</title><entry><title type="html">April Updates</title><link href="https://plainapm.com/blog/april-updates" rel="alternate" type="text/html" title="April Updates" /><published>2024-05-02T00:00:00+02:00</published><updated>2024-05-02T00:00:00+02:00</updated><id>https://plainapm.com/blog/april-updates</id><content type="html" xml:base="https://plainapm.com/blog/april-updates"><![CDATA[<p>🎉 There’s been quite some changes happening to PlainAPM in April, so here’s
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://plainapm.com/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://plainapm.com/" rel="alternate" type="text/html" /><updated>2024-05-02T12:11:09+02:00</updated><id>https://plainapm.com/blog/feed.xml</id><title type="html">PlainAPM</title><entry><title type="html">April Updates</title><link href="https://plainapm.com/blog/april-updates" rel="alternate" type="text/html" title="April Updates" /><published>2024-05-02T00:00:00+02:00</published><updated>2024-05-02T00:00:00+02:00</updated><id>https://plainapm.com/blog/april-updates</id><content type="html" xml:base="https://plainapm.com/blog/april-updates"><![CDATA[<p>🎉 There’s been quite some changes happening to PlainAPM in April, so here’s
 a quick summary:</p>
 
 <!-- more -->
@@ -21,7 +21,7 @@ long GC pauses:</p>
   <source src="/assets/videos/gc_count_search.mp4" type="video/mp4" />
 </video>
 
-<p><a href="https://cdn.forms-content.sg-form.com/5582cfbc-74a9-11ed-a388-825cdbd151cb">Sign up for the beta</a>
+<p><a href="https://cdn.forms-content.sg-form.com/5582cfbc-74a9-11ed-a388-825cdbd151cb?ref=april-updates">Sign up for the beta</a>
 if you’d like to try it out for your app.</p>
 
 <h2 id="ui-tweaks">UI tweaks</h2>
