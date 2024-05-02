@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://plainapm.com/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://plainapm.com/" rel="alternate" type="text/html" /><updated>2024-05-02T12:11:09+02:00</updated><id>https://plainapm.com/blog/feed.xml</id><title type="html">PlainAPM</title><entry><title type="html">April Updates</title><link href="https://plainapm.com/blog/april-updates" rel="alternate" type="text/html" title="April Updates" /><published>2024-05-02T00:00:00+02:00</published><updated>2024-05-02T00:00:00+02:00</updated><id>https://plainapm.com/blog/april-updates</id><content type="html" xml:base="https://plainapm.com/blog/april-updates"><![CDATA[<p>🎉 There’s been quite some changes happening to PlainAPM in April, so here’s
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://plainapm.com/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://plainapm.com/" rel="alternate" type="text/html" /><updated>2024-05-02T19:33:47+02:00</updated><id>https://plainapm.com/blog/feed.xml</id><title type="html">PlainAPM</title><entry><title type="html">April Updates</title><link href="https://plainapm.com/blog/april-updates" rel="alternate" type="text/html" title="April Updates" /><published>2024-05-02T00:00:00+02:00</published><updated>2024-05-02T00:00:00+02:00</updated><id>https://plainapm.com/blog/april-updates</id><content type="html" xml:base="https://plainapm.com/blog/april-updates"><![CDATA[<p>🎉 There’s been quite some changes happening to PlainAPM in April, so here’s
 a quick summary:</p>
 
 <!-- more -->
@@ -17,7 +17,7 @@ stats - <code class="language-plaintext highlighter-rouge">gc_time</code> and <c
 <p>This allows e.g. searching for jobs or requests that were affected by
 long GC pauses:</p>
 
-<video class="rounded-xl max-w-2xl" controls="">
+<video class="rounded-xl mx-auto w-content" controls="">
   <source src="/assets/videos/gc_count_search.mp4" type="video/mp4" />
 </video>
 
@@ -68,7 +68,7 @@ boundaries. And, as there are <a href="https://cloud.google.com/trace/docs/trace
 passing the trace context across systems, we should pick &amp; support
 the most widely accepted one(s), for better future interoperability.</p>
   </li>
-</ol>]]></content><author><name>Balázs</name></author><category term="blog" /><category term="updates" /><summary type="html"><![CDATA[🎉 There’s been quite some changes happening to PlainAPM in April, so here’s a quick summary:]]></summary></entry><entry><title type="html">Hello world</title><link href="https://plainapm.com/blog/plainapm-goes-live" rel="alternate" type="text/html" title="Hello world" /><published>2024-04-04T00:00:00+02:00</published><updated>2024-04-04T00:00:00+02:00</updated><id>https://plainapm.com/blog/plainapm-goes-live</id><content type="html" xml:base="https://plainapm.com/blog/plainapm-goes-live"><![CDATA[<p>👋 Hi there!</p>
+</ol>]]></content><author><name>Balázs</name></author><category term="blog" /><category term="updates" /><summary type="html"><![CDATA[Changes and improvements to PlainAPM for April 2024]]></summary></entry><entry><title type="html">Hello world</title><link href="https://plainapm.com/blog/plainapm-goes-live" rel="alternate" type="text/html" title="Hello world" /><published>2024-04-04T00:00:00+02:00</published><updated>2024-04-04T00:00:00+02:00</updated><id>https://plainapm.com/blog/plainapm-goes-live</id><content type="html" xml:base="https://plainapm.com/blog/plainapm-goes-live"><![CDATA[<p>👋 Hi there!</p>
 
 <p>I’ve been quietly building PlainAPM as a side project, and since I’m really
 happy how things are going, I think it’s time for the next step.</p>
@@ -87,4 +87,4 @@ give a discount to your first bills - and, if we meet in person, your
 favourite beverage is on me ☕.</p>
 
 <p>I’ll be also posting more about why I decided to build PlainAPM, and
-stuff that you can do with it - stay tuned!</p>]]></content><author><name>Balázs</name></author><category term="blog" /><category term="hello-world" /><summary type="html"><![CDATA[👋 Hi there! I’ve been quietly building PlainAPM as a side project, and since I’m really happy how things are going, I think it’s time for the next step.]]></summary></entry></feed>
+stuff that you can do with it - stay tuned!</p>]]></content><author><name>Balázs</name></author><category term="blog" /><category term="hello-world" /><summary type="html"><![CDATA[PlainAPM goes live]]></summary></entry></feed>
