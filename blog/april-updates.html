@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
-    <meta name="description" content="PlainAPM - Hello world">
+    <meta name="description" content="PlainAPM - April Updates">
 
-    <title>PlainAPM | Hello world</title>
+    <title>PlainAPM | April Updates</title>
 
     <meta property="og:site_name" content="PlainAPM">
     <meta property="og:type" content="website">
@@ -116,33 +116,83 @@
   <h1>
     <span class="block text-center text-lg font-semibold text-indigo-600"><a href="/blog">PlainAPM blog</a></span>
     <span class="mt-2 block text-center text-3xl font-bold leading-8 tracking-tight text-gray-900 sm:text-4xl">
-      Hello world
+      April Updates
     </span>
   </h1>
 
   <p class="mt-8 text-xl leading-8 text-gray-500 text-center"></p>
 
   <div class="prose mx-auto mt-12">
-    <p>👋 Hi there!</p>
-
-<p>I’ve been quietly building PlainAPM as a side project, and since I’m really
-happy how things are going, I think it’s time for the next step.</p>
+    <p>🎉 There’s been quite some changes happening to PlainAPM in April, so here’s
+a quick summary:</p>
 
 <!-- more -->
 
-<p>I’m looking for early users to partner with and, based on your feedback,
-shape PlainAPM’s future.</p>
+<h2 id="infrastructure">Infrastructure</h2>
 
-<p>Interested? Please make sure you’re signed up on the <a href="https://cdn.forms-content.sg-form.com/5582cfbc-74a9-11ed-a388-825cdbd151cb">beta list</a>,
-and lets have a chat - we can get your app connected and I’m ready to
-answer any questions, pair together, and provide help and support.</p>
+<p>Yeah, the least visible, yet probably the most important. PlainAPM is
+now hosted on a new infrastructure, which means things are faster and
+more scalable.</p>
 
-<p>I know your time is valuable, so I’m happy to send you some swag and
-give a discount to your first bills - and, if we meet in person, your
-favourite beverage is on me ☕.</p>
+<h2 id="cpu-time--gc-stats-tracking">CPU time &amp; GC stats tracking</h2>
 
-<p>I’ll be also posting more about why I decided to build PlainAPM, and
-stuff that you can do with it - stay tuned!</p>
+<p>The agent now collects per-thread time spent on the CPU, and also GC
+stats - <code class="language-plaintext highlighter-rouge">gc_time</code> and <code class="language-plaintext highlighter-rouge">gc_major</code>/<code class="language-plaintext highlighter-rouge">gc_minor</code> counts.</p>
+
+<p>This allows e.g. searching for jobs or requests that were affected by
+long GC pauses:</p>
+
+<video class="rounded-xl max-w-2xl" controls="">
+  <source src="/assets/videos/gc_count_search.mp4" type="video/mp4" />
+</video>
+
+<p><a href="https://cdn.forms-content.sg-form.com/5582cfbc-74a9-11ed-a388-825cdbd151cb">Try it out!</a></p>
+
+<h2 id="ui-tweaks">UI tweaks</h2>
+
+<ul>
+  <li>
+    <p>Speaking of search, the search results have been streamlined, so they
+show only the most important attributes &amp; metrics by default, with the
+full view being accessible by clicking on an ‘expand’ button.</p>
+  </li>
+  <li>
+    <p>Apps view displays aggregated stats/estimated costs for the current
+month, giving a quick overview of the app’s status:</p>
+  </li>
+  <li>
+    <p>The UI remembers the last page visited, and logging in/opening the app
+automatically redirects there, so it is possible to continue from where
+you left off.</p>
+  </li>
+  <li>
+    <p>Requests/jobs tables show a relative % time spent in a given
+transaction, which makes it easy to spot current heavy-hitters:</p>
+  </li>
+</ul>
+
+<p><img src="/assets/images/blog/2024-05-02-april-updates/relative_time_spent.webp" alt="Relative time spent in controller actions" srcset=" /assets/images/blog/2024-05-02-april-updates/relative_time_spent.webp 2247w" class="rounded-xl" sizes="" loading="lazy" /></p>
+
+<p>Thanks to everyone who contributed their feedback!</p>
+
+<h2 id="whats-next">What’s next</h2>
+
+<ol>
+  <li>
+    <p>PII filtering. While the agent currently depends on the instrumented app’s
+<code class="language-plaintext highlighter-rouge">Rails.application.config.filter_parameters</code> <a href="https://plainapm.com/docs#filtering-sensitive-information">settings</a>,
+this isn’t 100% dependable. It also relies on the developer
+configuring - mostly adding - extra filters to scrub PII and other
+sensitive data from attributes and queries. A PII filter would make
+it less likely for that data to ever hit the database.</p>
+  </li>
+  <li>
+    <p>Improved span context passing across Process/Thread/Fibers
+boundaries. And, as there are <a href="https://cloud.google.com/trace/docs/trace-context#legacy-http-header">different</a> <a href="https://devcenter.heroku.com/articles/http-request-id">conventions</a> and <a href="https://www.w3.org/TR/trace-context/">standards</a> when it comes to
+passing the trace context across systems, we should pick &amp; support
+the most widely accepted one(s), for better future interoperability.</p>
+  </li>
+</ol>
 
   </div>
 
@@ -156,7 +206,7 @@ stuff that you can do with it - stay tuned!</p>
       </p>
 
       <p>
-        <time datetime="2024-04-04" class="text-xs text-gray-500">April 04, 2024</time>
+        <time datetime="2024-05-02" class="text-xs text-gray-500">May 02, 2024</time>
       </p>
     </div>
   </div>
