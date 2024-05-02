@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://plainapm.com/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://plainapm.com/" rel="alternate" type="text/html" /><updated>2024-05-02T11:44:18+02:00</updated><id>https://plainapm.com/blog/feed.xml</id><title type="html">PlainAPM</title><entry><title type="html">April Updates</title><link href="https://plainapm.com/blog/april-updates" rel="alternate" type="text/html" title="April Updates" /><published>2024-05-02T00:00:00+02:00</published><updated>2024-05-02T00:00:00+02:00</updated><id>https://plainapm.com/blog/april-updates</id><content type="html" xml:base="https://plainapm.com/blog/april-updates"><![CDATA[<p>🎉 There’s been quite some changes happening to PlainAPM in April, so here’s
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="https://plainapm.com/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://plainapm.com/" rel="alternate" type="text/html" /><updated>2024-05-02T11:47:20+02:00</updated><id>https://plainapm.com/blog/feed.xml</id><title type="html">PlainAPM</title><entry><title type="html">April Updates</title><link href="https://plainapm.com/blog/april-updates" rel="alternate" type="text/html" title="April Updates" /><published>2024-05-02T00:00:00+02:00</published><updated>2024-05-02T00:00:00+02:00</updated><id>https://plainapm.com/blog/april-updates</id><content type="html" xml:base="https://plainapm.com/blog/april-updates"><![CDATA[<p>🎉 There’s been quite some changes happening to PlainAPM in April, so here’s
 a quick summary:</p>
 
 <!-- more -->
@@ -33,7 +33,7 @@ full view being accessible by clicking on an ‘expand’ button.</p>
   </li>
   <li>
     <p>Apps view displays aggregated stats/estimated costs for the current
-month, giving a quick overview of the app’s status:</p>
+month, giving a quick overview of the current app’s status.</p>
   </li>
   <li>
     <p>The UI remembers the last page visited, and logging in/opening the app
