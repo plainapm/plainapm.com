@@ -129,6 +129,69 @@
 
 <div class="relative mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 mt-12">
   
+  <section id="2024-06-06 00:00:00 +0200" aria-labelledby="2024-06-06 00:00:00 +0200-heading" class="md:flex">
+    <h2 id="2024-06-06 00:00:00 +0200-heading" class="pl-7 text-sm leading-6 text-slate-500 md:w-1/4 md:pl-0 md:pr-12 md:text-right">
+      <a href="#2024-06-06">June 06, 2024</a>
+    </h2>
+
+    <div class="relative pt-2 px-7 md:w-3/4 md:pt-0 md:pl-12 pb-16">
+      <div class="absolute bottom-0 left-0 w-px bg-slate-200 -top-3 md:top-2.5">
+      </div>
+
+      <div class="absolute -top-[1.0625rem] -left-1 h-[0.5625rem] w-[0.5625rem] rounded-full border-2 border-slate-300 bg-white md:top-[0.4375rem]">
+      </div>
+
+      <div class="max-w-none prose-h3:mb-4 prose-h3:text-base prose-h3:leading-6 prose-sm prose prose-slate prose-a:font-semibold prose-a:text-indigo-500 hover:prose-a:text-indigo-600">
+        <h3>Search and trace summaries</h3>
+
+	<p>Improving on answering ‘why was X slow’, traces now contain some
+statistics which are typically causes for slowdowns in requests and
+jobs:</p>
+
+<ul>
+  <li>ActiveRecord object allocations</li>
+  <li>SQL query count</li>
+  <li>And the duration of the slowest SQL query.</li>
+</ul>
+
+<p><img src="/assets/images/changelog/slowest-trace-headers.webp" alt="A transaction trace headers showing SQL query count, duration of the slowest query and the number of ActiveRecord object allocations" srcset=" /assets/images/changelog/slowest-trace-headers.webp 1919w" class="rounded-xl" sizes="" loading="lazy" /></p>
+
+<p>Similarly, the search results now contain summary statistics of the
+search results, which can help get the feel for throughput and/or
+latency of the resulting events:</p>
+
+<p><img src="/assets/images/changelog/search-headers.webp" alt="Event search results with statistics about first/last time, events count, events per minute, and median/p99/maximum duration" srcset=" /assets/images/changelog/search-headers.webp 1919w" class="rounded-xl" sizes="" loading="lazy" /></p>
+
+
+      </div>
+    </div>
+  </section>
+  
+  <section id="2024-05-17 00:00:00 +0200" aria-labelledby="2024-05-17 00:00:00 +0200-heading" class="md:flex">
+    <h2 id="2024-05-17 00:00:00 +0200-heading" class="pl-7 text-sm leading-6 text-slate-500 md:w-1/4 md:pl-0 md:pr-12 md:text-right">
+      <a href="#2024-05-17">May 17, 2024</a>
+    </h2>
+
+    <div class="relative pt-2 px-7 md:w-3/4 md:pt-0 md:pl-12 pb-16">
+      <div class="absolute bottom-0 left-0 w-px bg-slate-200 -top-3 md:top-2.5">
+      </div>
+
+      <div class="absolute -top-[1.0625rem] -left-1 h-[0.5625rem] w-[0.5625rem] rounded-full border-2 border-slate-300 bg-white md:top-[0.4375rem]">
+      </div>
+
+      <div class="max-w-none prose-h3:mb-4 prose-h3:text-base prose-h3:leading-6 prose-sm prose prose-slate prose-a:font-semibold prose-a:text-indigo-500 hover:prose-a:text-indigo-600">
+        <h3>Sorting by relative duration</h3>
+
+	<p>To see the current heavy hitters easily, the requests, jobs, and
+transaction tables can be sorted by relative time %:</p>
+
+<p><img src="/assets/images/changelog/requests-sorted-by-relative-time.webp" alt="Controller endpoint requests sorted by relative time" srcset=" /assets/images/changelog/requests-sorted-by-relative-time.webp 1765w" class="rounded-xl" sizes="" loading="lazy" /></p>
+
+
+      </div>
+    </div>
+  </section>
+  
   <section id="2024-04-22 00:00:00 +0200" aria-labelledby="2024-04-22 00:00:00 +0200-heading" class="md:flex">
     <h2 id="2024-04-22 00:00:00 +0200-heading" class="pl-7 text-sm leading-6 text-slate-500 md:w-1/4 md:pl-0 md:pr-12 md:text-right">
       <a href="#2024-04-22">April 22, 2024</a>
